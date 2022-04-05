@@ -1,11 +1,20 @@
 /////first thing is to select all of our cell elements///
+const squares = document.getElementsByClassName("cell");
 
+////select our game status display///
+const gameDisplay = document.querySelector(".gameContainer")
+
+////select our reset button/////
+const resetButton = document.querySelector(".restartButton")
 
 
 /////game status element///////// ***Here we declare some variables that we will use to track the game state throught the game///
 
 
 ////////////variable to track to track played cells and validate game state later on///////
+
+
+
 // you need to record someone has clicked something in an array///then have a head function to check array to see if anyone has won////
 
 
