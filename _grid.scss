@@ -1,0 +1,16 @@
+/////applying grid to game container////
+.gameContainer {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  grid-template-columns: repeat(3, auto);
+
+  .cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+}

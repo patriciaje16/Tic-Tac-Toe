@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.gameTitle {
+  text-align: center;
+  font-size: 40px;
+  margin-top: 10%;
+}
+
+.gameContainer {
+
+
+  .cell {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border: 1px solid black;
+    //////for the x and o
+    cursor: pointer
+  }
+}
+
+.bottomSection {
+  text-align: center;
+  font-size: 40px;
+  margin-top: 10%;
+  .gameStatus {
+    font-size: 25px;
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+  .restartButton {
+    background-color: coral;
+    padding: 8px;
+    border-radius: 8px;
+    border: none;
+    font-size: 20px;
+    margin-left: 1em;
+    cursor: pointer;
+
+  }
+}
+
+.playerX {
+  color: blue;
+}
+
+.playerO {
+color: yellow
+}
+
