@@ -11,6 +11,10 @@
   align-items: center;
 }
 
+.cell {
+  font-size: 3rem;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -41,7 +45,7 @@
   margin-top: 1em;
   margin-bottom: 1em;
 }
-.bottomSection .restartButton {
+.bottomSection .restart {
   background-color: coral;
   padding: 8px;
   border-radius: 8px;

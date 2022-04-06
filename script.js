@@ -5,13 +5,20 @@ const squares = document.querySelectorAll(".cell");
 const gameDisplay = document.querySelector(".gameContainer")
 
 ////select our reset button/////
-const resetButton = document.querySelector(".restartButton")
+const resetButton = document.querySelector(".restart")
 
 
-/////game status element///////// ***Here we declare some variables that we will use to track the game state throught the game///
+
 
 
 ////////////variable to track to track played cells and validate game state later on///////
+
+// const validClick = (tile) => {
+//   if (tile.innerText === 'X' || tile.innertext === 'O') {
+//     return false;
+//   }////makes sure player only plays one function
+//   return true
+// };
 
 let board = ['', '', '', '', '', '', '', '', ''];
 /* Index within the board
@@ -19,22 +26,27 @@ let board = ['', '', '', '', '', '', '', '', ''];
         [3] [4] [5]
         [6] [7] [8]
         
- *////////
+ */ ///////
+
+
 
 /////area to store player/////
-let currentPlayer = 'X';
+const XClass = 'x'
+const OClass = 'o'
+let currentPlayer = XClass
 
-/////place to store end game result
+/////place to store game activity 
 let isGameActive = true;
 
 
 ////variables to represent end game state////////////////
-const playerXWon = 'Player x Won';
-const playerOWon = 'Player O Won';
+const winMessage = `Player ${currentPlayer} Won`;
+const currentPlayersTurn = `It's ${currentPlayer}'s turn`;
 const tie = 'Tie';
 
 
-// you need to record someone has clicked something in an array///then have a head function to check array to see if anyone has won////
+
+// a head function to check array to see if anyone has won////
 
 
 //////messages to display to user during the game such as winning message, draw message, current player turn//////
@@ -42,13 +54,33 @@ const tie = 'Tie';
 
 ////////setting message to let players know whose turn it is/////
 
-
+const playerChange = () => {
+  if (currentPlayer === XClass) {
+    currentPlayer = OClass
+  } else(
+    currentPlayer = XClass
+  )
+}
 ///adding event listeners to game cells 
-squares.forEach( (cell) => {
-  cell.addEventListener('click', () => console.log("It works") );
+squares.forEach(cell => {
+  cell.addEventListener('click', (e) => {
+    cell.innerHTML = currentPlayer
+    playerChange()
+
+  });
 });
 
+////need it to log the players letter just once on each click
 
-
+// const gameRestart = () => {
+//   isGameActive = true;
+//   currentPlayer = XClass;
+//   board = ['', '', '', '', '', '', '', '', ''];
+//   gameDisplay.innerHTML = currentPlayersTurn;
+//   squares.forEach(cell => cell.innerHTML = "");
+// }
 ///adding event listners to reset button
-resetButton.addEventListener('click', () => console.log("It works") );
+resetButton.addEventListener('click', (e) => {
+   squares.forEach(cell => cell.innerHTML = "")
+})
+
