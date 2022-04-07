@@ -1,3 +1,16 @@
-.cell {
-  font-size: 3rem;
+
+
+body {
+  background-color: darkslategray;
+.gameTitle {
+  font-family: 'Bowlby One';
+  animation: neon 3s infinite;
+  color: #f40;
+
+}
+
+.restart {
+  background-color: coral;
+
+}
 }
