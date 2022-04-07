@@ -7,28 +7,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tic Tac Toe</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bowlby+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
   <section>
-    <h1 class="gameTitle">Tic Tac Toe</h1>
+    <div class="container">
+      <h1 class="title">
+        <span class="title-word title-word-1">Tic</span>
+        <span class="title-word title-word-2">Tac</span>
+        <span class="title-word title-word-3">Toe</span>
+      </h1>
+    </div>
     <div class="gameContainer">
-      <div class="cell" id="cell1" data-cell-index = "0"></div>
-      <div class="cell" id="cell2" data-cell-index = "1"></div>
-      <div class="cell" id="cell3" data-cell-index = "2"></div>
-      <div class="cell" id="cell4" data-cell-index = "3"></div>
-      <div class="cell" id="cell5" data-cell-index = "4"></div>
-      <div class="cell" id="cell6" data-cell-index = "5"></div>
-      <div class="cell" id="cell7" data-cell-index = "6"></div>
-      <div class="cell" id="cell8" data-cell-index = "7"></div>
-      <div class="cell" id="cell9" data-cell-index = "8"></div>
+      <div class="cell" id="cell1" data-cell-index="0"></div>
+      <div class="cell" id="cell2" data-cell-index="1"></div>
+      <div class="cell" id="cell3" data-cell-index="2"></div>
+      <div class="cell" id="cell4" data-cell-index="3"></div>
+      <div class="cell" id="cell5" data-cell-index="4"></div>
+      <div class="cell" id="cell6" data-cell-index="5"></div>
+      <div class="cell" id="cell7" data-cell-index="6"></div>
+      <div class="cell" id="cell8" data-cell-index="7"></div>
+      <div class="cell" id="cell9" data-cell-index="8"></div>
 
     </div>
 
     <div class="bottomSection">
-    <h2 class="gameStatus"></h2>
-    <button class="restart">Restart Game</button>
-    <div></div>
+      <h2 class="gameStatus"></h2>
+      <button class="restart">Restart Game</button>
+      <div></div>
   </section>
 
   <script src="script.js"></script>
