@@ -1,5 +1,6 @@
 /////first thing is to select all of our cell elements///
 const squares = document.querySelectorAll(".cell");
+
 ////individual square elements
 const cell1 = document.querySelector("#cell1")
 const cell2 = document.querySelector("#cell2")
@@ -64,7 +65,7 @@ const conditionsToWin = [
 
 ////variables to represent end game state////////////////
 const toCheckWhoWon = () => {
-  console.log(gameState)
+
   for (let i = 0; i <= 9; i++) {
 
     if (
@@ -90,7 +91,7 @@ const toCheckWhoWon = () => {
 }
 
 
-
+//////**NEEED TO ADD A TIE CONDITION  */
 
 
 
@@ -125,6 +126,7 @@ const updateDisplay = () => {
 ///adding event listeners to game cells 
 squares.forEach(cell => {
   cell.addEventListener('click', (e) => {
+    
     cell.innerHTML = currentPlayer
 
     const clickedCell = e.target
@@ -133,11 +135,11 @@ squares.forEach(cell => {
 
     playerChange()
 
+
     updateDisplay()
-    //////to log value into gameState
-
-
+  
     toCheckWhoWon()
+
 
   });
 });
