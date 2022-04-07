@@ -64,28 +64,29 @@ const conditionsToWin = [
 
 ////variables to represent end game state////////////////
 const toCheckWhoWon = () => {
+  console.log(gameState)
   for (let i = 0; i <= 9; i++) {
-    
-  if (
-    gameState[conditionsToWin[i][0]] == 'x' && gameState[conditionsToWin[i][1]] == 'x' && gameState[conditionsToWin[i][2]] == 'x'
-  ) {
 
-    gameDisplay.innerHTML = xPlayerWinMessage;
-    console.log("x wins")
-    break
+    if (
+      gameState[conditionsToWin[i][0]] == 'o' && gameState[conditionsToWin[i][1]] == 'o' && gameState[conditionsToWin[i][2]] == 'o'
+    ) {
+
+      gameDisplay.innerHTML = oPlayerWinMessage;
+      console.log("o wins")
+      break
 
 
-  } else if (
-    gameState[conditionsToWin[i][0]] == 'o' && gameState[conditionsToWin[i][1]] == 'o' && gameState[conditionsToWin[i][2]] == 'o'
-  ) {
-    gameDisplay.innerHTML = oPlayerWinMessage;
-    console.log("o wins")
-    break
+    } else if (
+      gameState[conditionsToWin[i][0]] == 'x' && gameState[conditionsToWin[i][1]] == 'x' && gameState[conditionsToWin[i][2]] == 'x'
+    ) {
+      gameDisplay.innerHTML = xPlayerWinMessage;
+      console.log("x wins")
+      break
+
+    }
+
 
   }
-
-
-}
 }
 
 
@@ -119,17 +120,6 @@ const updateDisplay = () => {
 
 
 
-/////// function to update the gamestate
-
-// const updateGameState = () => {
-//   gameState.unshift(
-//     squares.forEach(cell => {
-//       cell.innerHTML 
-//     })
-//   )
-// }
-
-
 
 
 ///adding event listeners to game cells 
@@ -139,24 +129,20 @@ squares.forEach(cell => {
 
     const clickedCell = e.target
     const clickedCellIndex = parseInt(clickedCell.getAttribute('data-cell-index'))
-
-
-    playerChange()
-    
-updateDisplay()
-    //////to log value into gameState
     gameState[clickedCellIndex] = currentPlayer;
 
-toCheckWhoWon()
+    playerChange()
+
+    updateDisplay()
+    //////to log value into gameState
+
+
+    toCheckWhoWon()
 
   });
 });
 
 //////to check for a win/////////
-
-
-
-
 
 
 ////need it to log the players letter just once on each click
@@ -172,6 +158,6 @@ toCheckWhoWon()
 resetButton.addEventListener('click', (e) => {
   squares.forEach(cell => cell.innerHTML = "")
   currentPlayer = XClass
-  board = ['', '', '', '', '', '', '', '', '']
+  gameState = ['', '', '', '', '', '', '', '', '']
   gameDisplay.innerHTML = currentPlayersTurn
 })
