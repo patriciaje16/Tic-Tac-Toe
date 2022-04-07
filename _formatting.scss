@@ -16,10 +16,7 @@
   .cell {
     width: 100px;
     height: 100px;
-    background-color: white;
-    border: 1px solid black;
-    //////for the x and o
-    cursor: pointer
+    cursor: pointer;
   }
 }
 
@@ -43,13 +40,5 @@
     cursor: pointer;
 
   }
-}
-
-.playerX {
-  color: blue;
-}
-
-.playerO {
-color: yellow
 }
 
