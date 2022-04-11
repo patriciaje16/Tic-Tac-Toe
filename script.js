@@ -83,7 +83,7 @@ const toCheckWhoWon = () => {
 }
 
 
-//////**NEEED TO ADD A TIE CONDITION  */
+
 
 
 
