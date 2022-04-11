@@ -1,16 +1,6 @@
 /////first thing is to select all of our cell elements///
 const squares = document.querySelectorAll(".cell");
 
-////individual square elements
-const cell1 = document.querySelector("#cell1")
-const cell2 = document.querySelector("#cell2")
-const cell3 = document.querySelector("#cell3")
-const cell4 = document.querySelector("#cell4")
-const cell5 = document.querySelector("#cell5")
-const cell6 = document.querySelector("#cell6")
-const cell7 = document.querySelector("#cell7")
-const cell8 = document.querySelector("#cell8")
-const cell9 = document.querySelector("#cell9")
 
 ////select our game status display///
 const gameDisplay = document.querySelector(".gameStatus")
@@ -73,7 +63,7 @@ const toCheckWhoWon = () => {
     ) {
 
       gameDisplay.innerHTML = oPlayerWinMessage;
-      console.log("o wins")
+      
       break
 
 
@@ -81,9 +71,11 @@ const toCheckWhoWon = () => {
       gameState[conditionsToWin[i][0]] == 'x' && gameState[conditionsToWin[i][1]] == 'x' && gameState[conditionsToWin[i][2]] == 'x'
     ) {
       gameDisplay.innerHTML = xPlayerWinMessage;
-      console.log("x wins")
+     
       break
 
+    } else if (!gameState.includes("")){
+      gameDisplay.innerHTML = tie
     }
 
 
@@ -128,6 +120,12 @@ squares.forEach(cell => {
   cell.addEventListener('click', (e) => {
     
     cell.innerHTML = currentPlayer
+
+    if (currentPlayer == 'x') {
+    cell.style.color = "#DF8453"
+    } else {
+      cell.style.color = "#3D8DAE"
+    }
 
     const clickedCell = e.target
     const clickedCellIndex = parseInt(clickedCell.getAttribute('data-cell-index'))
