@@ -11,14 +11,13 @@
   align-items: center;
 }
 
-
 .title-word {
   animation: color-animation 4s linear infinite;
 }
 
 .title-word-1 {
   --color-1: #DF8453;
-  --color-2: #3e8eb1;
+  --color-2: #3D8DAE;
   --color-3: #E4A9A8;
 }
 
@@ -82,7 +81,7 @@ body .cell {
   color: #ffd782;
   border: black 1px solid;
   font-family: "Roboto", sans-serif;
-  font-size: 50px;
+  font-size: 60px;
 }
 body .bottomSection .gameStatus {
   font-family: "Roboto", sans-serif;
