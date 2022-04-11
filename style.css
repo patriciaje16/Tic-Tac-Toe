@@ -101,13 +101,6 @@ body .bottomSection .restart {
   padding: 0;
 }
 
-.gameTitle {
-  text-align: center;
-  font-size: 40px;
-  margin-top: 10%;
-  margin-bottom: 40px;
-}
-
 .gameContainer .cell {
   width: 100px;
   height: 100px;
