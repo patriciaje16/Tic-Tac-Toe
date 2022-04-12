@@ -10,7 +10,7 @@ const resetButton = document.querySelector(".restart")
 
 
 
-///for loop 
+
 /////area to store player/////
 const XClass = 'x'
 const OClass = 'o'
@@ -23,14 +23,6 @@ const currentPlayersTurn = `It's ${currentPlayer}'s turn`;
 const tie = 'Tie';
 
 
-////////////variable to track to track played cells and validate game state later on///////
-
-// const validClick = (tile) => {
-//   if (tile.innerText === 'X' || tile.innertext === 'O') {
-//     return false;
-//   }////makes sure player only plays one function
-//   return true
-// };
 
 let gameState = ['', '', '', '', '', '', '', '', ''];
 /* Index within the board
@@ -53,7 +45,7 @@ const conditionsToWin = [
 
 
 
-////variables to represent end game state////////////////
+////function to check winner or tie////////////////
 const toCheckWhoWon = () => {
 
   for (let i = 0; i <= 9; i++) {
@@ -87,15 +79,7 @@ const toCheckWhoWon = () => {
 
 
 
-
-
-// a head function to check array to see if anyone has won////
-
-
-//////messages to display to user during the game such as winning message, draw message, current player turn//////
-
-
-////////setting message to let players know whose turn it is/////
+////////function to deal with player change/////
 
 const playerChange = () => {
   if (currentPlayer === XClass) {
@@ -105,13 +89,11 @@ const playerChange = () => {
   )
 }
 
-//////to grab what is in the cell
+//////function to update the game display
 
 const updateDisplay = () => {
   gameDisplay.innerHTML = `It's ${currentPlayer}'s turn`
 }
-
-
 
 
 
@@ -142,18 +124,7 @@ squares.forEach(cell => {
   });
 });
 
-//////to check for a win/////////
 
-
-////need it to log the players letter just once on each click
-
-// const gameRestart = () => {
-//   isGameActive = true;
-//   currentPlayer = XClass;
-//   board = ['', '', '', '', '', '', '', '', ''];
-//   gameDisplay.innerHTML = currentPlayersTurn;
-//   squares.forEach(cell => cell.innerHTML = "");
-// }
 ///adding event listners to reset button
 resetButton.addEventListener('click', (e) => {
   squares.forEach(cell => cell.innerHTML = "")
